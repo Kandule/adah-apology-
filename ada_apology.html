@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Adah, With Love 💗</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#721344;background:linear-gradient(135deg,#ffb3d9,#ff4fa3 45%,#ff8bc5);overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.float{position:absolute;color:#fff;opacity:.7;animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}to{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+.hero,.section{position:relative;z-index:1;width:min(940px,92%);margin:0 auto}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:45px 0}
+.card{background:rgba(255,245,251,.95);border:3px solid #ff9ac9;border-radius:34px;padding:clamp(28px,6vw,65px);box-shadow:0 25px 80px #9c145855;text-align:center}
+.kicker{display:inline-block;background:#ff238d;color:#fff;padding:9px 18px;border-radius:999px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(50px,10vw,92px);line-height:.9;margin:20px 0 10px;color:#ed147d}
+.name{font-size:clamp(30px,6vw,48px);font-weight:bold;color:#ff4ca4}
+.subtitle{font-size:21px;line-height:1.7;max-width:700px;margin:25px auto}
+.btn{border:0;border-radius:999px;padding:16px 28px;margin:8px;font-size:17px;font-weight:bold;cursor:pointer;background:linear-gradient(135deg,#ff1385,#ff65b2);color:#fff;box-shadow:0 10px 25px #e8188350;transition:.2s}.btn:hover{transform:translateY(-3px) scale(1.03)}
+.music{background:#ffe0ef;color:#b51b67}
+#musicStatus{font:14px Arial,sans-serif;margin-top:8px;color:#a52a67}
+.section{padding:40px 0}.section .card{text-align:left}.section h2{text-align:center;color:#ed147d;font-size:40px;margin-top:0}
+.letter{font-size:19px;line-height:1.9}.quote{font-size:27px;text-align:center;color:#f02c8d;font-style:italic;margin:35px 0}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.photo{min-height:190px;border-radius:22px;background:linear-gradient(135deg,#ffd1e6,#ff68ad);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#9d185d;font-family:Arial,sans-serif;font-weight:bold;border:2px solid #ffaad0}
+.photo input{display:none}.photo label{cursor:pointer}.photo img{width:100%;height:100%;object-fit:cover;border-radius:18px}
+.final{text-align:center}.final h2{font-size:clamp(40px,8vw,70px)}.final p{font-size:21px;line-height:1.8}
+#answer{display:none;margin-top:20px;text-align:center;font-size:24px;color:#e9147e;font-weight:bold}
+.footer{text-align:center;color:white;font-family:Arial,sans-serif;font-weight:bold;padding:25px 0 50px}
+@media(max-width:650px){.photos{grid-template-columns:1fr}.photo{min-height:150px}}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<section class="hero">
+<div class="card">
+<div class="kicker">A MESSAGE FOR YOU 💗</div>
+<div style="font-size:38px;margin-top:18px">🌹 💕 🌹</div>
+<h1>I'm Sorry</h1>
+<div class="name">Adah ❤️</div>
+<p class="subtitle">I made this because a normal “sorry” didn't feel like enough.</p>
+<button class="btn music" onclick="toggleMusic()">🎵 Play Our Apology Music</button>
+<div id="musicStatus">Music starts after you press the button.</div>
+<br>
+<button class="btn" onclick="document.getElementById('letter').scrollIntoView()">Read My Letter 💌</button>
+</div>
+</section>
+
+<section class="section" id="letter">
+<div class="card">
+<h2>Dear Adah, 💌</h2>
+<div class="letter">
+<p>I know you're mad at me. And I know I can't magically make that feeling disappear just by saying “I'm sorry.”</p>
+<p>So I'm not going to make excuses. <strong>I messed up, and I'm genuinely sorry for hurting you.</strong></p>
+<p>You matter to me more than my pride, more than being right, and more than winning an argument. If my actions made you feel unappreciated, unheard, or unloved, then I understand why you're upset.</p>
+<p>I don't expect you to forgive me instantly. You deserve the space to feel what you feel. What I can do is show you that I'm serious about doing better.</p>
+</div>
+<div class="quote">“If I could turn back the moment, I would.”</div>
+<div class="photos">
+<div class="photo"><label for="p1">📸<br>Add a photo of us<input id="p1" type="file" accept="image/*" onchange="preview(this)"></label></div>
+<div class="photo"><label for="p2">📸<br>Add another memory<input id="p2" type="file" accept="image/*" onchange="preview(this)"></label></div>
+<div class="photo"><label for="p3">📸<br>Our favorite moment<input id="p3" type="file" accept="image/*" onchange="preview(this)"></label></div>
+</div>
+<p style="text-align:center;margin-top:12px;font:13px Arial;color:#a64b79">Photos stay in your browser; they are not uploaded anywhere by this page.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="card final">
+<h2>One Last Question…</h2>
+<p><strong>Adah, will you forgive me? 🥺</strong></p>
+<button class="btn" onclick="forgive()">YES, I FORGIVE YOU 💗</button>
+<button class="btn music" onclick="heartStorm()">I'M STILL MAD 😭</button>
+<div id="answer"></div>
+</div>
+</section>
+
+<div class="footer">Made with an unreasonable amount of pink, love, and regret. 💗</div>
+
+<script>
+const symbols=["♥","♡","💗","💕","💖","💓","🌸","✨"];
+for(let i=0;i<55;i++){let x=document.createElement("div");x.className="float";x.textContent=symbols[Math.floor(Math.random()*symbols.length)];x.style.left=Math.random()*100+"vw";x.style.fontSize=16+Math.random()*32+"px";x.style.animationDuration=5+Math.random()*8+"s";x.style.animationDelay=Math.random()*8+"s";document.getElementById("hearts").appendChild(x)}
+
+let audioCtx,osc,playing=false;
+function toggleMusic(){
+ if(playing){if(audioCtx)audioCtx.suspend();playing=false;document.getElementById("musicStatus").textContent="Music paused.";return}
+ audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+ const notes=[261.63,329.63,392,329.63,293.66,349.23,440,392];
+ let i=0;
+ function play(){if(!playing)return;osc=audioCtx.createOscillator();let gain=audioCtx.createGain();osc.frequency.value=notes[i%notes.length];osc.type="sine";gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.07,audioCtx.currentTime+.04);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.65);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.7);i++;setTimeout(play,700)}
+ playing=true;audioCtx.resume();document.getElementById("musicStatus").textContent="Playing a soft little apology melody. 💕";play();
+}
+function forgive(){document.getElementById("answer").style.display="block";document.getElementById("answer").innerHTML="🥹❤️ THANK YOU, ADAH. I PROMISE I'LL DO BETTER. ❤️🥹";heartStorm()}
+function heartStorm(){for(let i=0;i<35;i++){let h=document.createElement("div");h.textContent="💗";h.style.position="fixed";h.style.left="50vw";h.style.top="50vh";h.style.zIndex=10;h.style.fontSize=18+Math.random()*35+"px";h.style.pointerEvents="none";document.body.appendChild(h);let x=(Math.random()-.5)*window.innerWidth*1.2,y=(Math.random()-.5)*window.innerHeight*1.2;h.animate([{transform:"translate(-50%,-50%) scale(.2)",opacity:1},{transform:`translate(${x}px,${y}px) scale(1.5)`,opacity:0}],{duration:1400,easing:"cubic-bezier(.1,.8,.2,1)"}).onfinish=()=>h.remove()}}
+function preview(input){if(!input.files[0])return;let file=input.files[0],reader=new FileReader();reader.onload=e=>{let parent=input.parentElement;parent.innerHTML="";let img=document.createElement("img");img.src=e.target.result;parent.appendChild(img)};reader.readAsDataURL(file)}
+</script>
+</body>
+</html>
